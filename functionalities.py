@@ -12,7 +12,15 @@ def new_client():
         print("Client already exist !")
     
 def new_transaction():
-    pass
+    client_list = fM.get_clients()
+    print(client_list)
+    debtor = input("Debtor name: ")
+    creditor = input("Creditor name: ")
+    if debtor not in client_list or creditor not in client_list:
+        print("Unknown debtor or creditor")
+        return
+    amount = float(input("How much ?: "))
+    fM.add_transaction(debtor,creditor,amount)
     
 def look_credit():
     pass

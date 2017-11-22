@@ -8,10 +8,15 @@ def add_client(client_name):
         file.write(client_name+"\n")
       
 def add_transaction(debtor, creditor, amount):
-    pass
+    with open(transaction_filename,'a') as file:
+        file.write(debtor+" "+creditor+" "+str(amount)+"\n")
         
 def get_clients():
-    pass
+    list_clients = []
+    with open(client_filename,'r') as file:
+        for line in file:
+            list_clients.append(line[0:-1])
+    return list_clients
 
 def get_transactions():
     pass
