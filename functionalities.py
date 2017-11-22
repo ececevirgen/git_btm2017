@@ -1,7 +1,7 @@
 import file_manager as fM
 
 def say_hi():
-    print("Welcome to potato bank, how can I help you?")
+    print("We need more clients like you !")
 
 def new_client():
     new_client = input("...New client name: ")
@@ -34,3 +34,6 @@ def look_credit():
     for transaction in transactions:
         if transaction[0] == client_name:
             solde -= float(transaction[2])
+        elif transaction[1] == client_name:
+            solde += float(transaction[2])
+    print(client_name+" have "+str(solde)+" potatoes")
